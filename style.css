@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #004d25;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Container que alinha os cards e os botões */
+.contador-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.equipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+}
+
+.equipe {
+    background-color: #1c1c1c;
+    padding: 10px 10px; /* Reduz o padding para telas menores */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    border: 2px solid #4d4d4d;
+}
+
+.nome-equipe {
+    font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    font-weight: 600;
+    margin-top: 0;
+    color: #e74c3c;
+    border-bottom: 2px solid #4d4d4d;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.placar {
+    font-size: 3rem; /* Reduz o tamanho da fonte do placar */
+    font-weight: 600;
+    margin: 50px 0;
+    color: #f0f0f0;
+}
+
+/* Botões */
+.botoes-ajuste {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px; 
+    width: 100%;
+}
+
+.botoes-gerais {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem; /* Reduz o tamanho da fonte do botão */
+    font-weight: 600;
+    padding: 10px 5px; /* Reduz o padding do botão */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    flex-grow: 1;
+}
+
+.botao-ponto {
+    background-color: #27ae60;
+    color: #f0f0f0;
+}
+
+.botao-ponto:hover {
+    background-color: #229954;
+}
+
+.botao-ajustar {
+    background-color: #34495e;
+    color: #f0f0f0;
+}
+
+.botao-ajustar:hover {
+    background-color: #2c3e50;
+}
+
+.botao-truco {
+    background-color: #e74c3c;
+    color: #f0f0f0;
+    width: 100%;
+}
+
+.botao-truco:hover {
+    background-color: #c0392b;
+}
+
+.botao-reiniciar {
+    background-color: #9b59b6;
+    color: #f0f0f0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.botao-reiniciar:hover {
+    background-color: #8e44ad;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.tela-vitoria {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.conteudo-vitoria {
+    background-color: #1c1c1c;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    color: #f0f0f0;
+    border: 2px solid #4d4d4d;
+    max-width: 90%;
+}
+
+#mensagem-vitoria {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #27ae60;
+}
+
+.pontuacao-vitorias {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.botao-nova-partida {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: #9b59b6;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-nova-partida:hover {
+    background-color: #8e44ad;
+}
+
+.vitoria {
+  animation: piscar 1s infinite alternate;
+}
+
+@keyframes piscar {
+  0% { color: green; }
+  100% { color: red; }
+}
+
+/* Tela de início */
+.tela-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #004d25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+}
+
+.conteudo-inicio {
+    text-align: center;
+    color: #fff;
+}
+
+.logo-truco {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #e74c3c;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.loading-barra {
+    width: 300px;
+    height: 20px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 2px solid #fff;
+}
+
+.loading-progresso {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    animation: carregar 10s linear forwards;
+}
+
+@keyframes carregar {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+#botao-play {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#botao-play:hover {
+    background-color: #229954;
+}
