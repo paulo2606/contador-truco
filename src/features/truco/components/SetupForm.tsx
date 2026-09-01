@@ -6,6 +6,7 @@ import { GameConfig, GameMode, Variant } from "../types";
 
 interface SetupFormProps {
   onStart: (config: GameConfig) => void;
+  extraBottomSpace?: boolean;
 }
 
 const DEFAULT_NAMES: Record<GameMode, [string, string]> = {
@@ -13,7 +14,7 @@ const DEFAULT_NAMES: Record<GameMode, [string, string]> = {
   individual: ["Jogador 1", "Jogador 2"],
 };
 
-export function SetupForm({ onStart }: SetupFormProps) {
+export function SetupForm({ onStart, extraBottomSpace }: SetupFormProps) {
   const [variant, setVariant] = useState<Variant>("paulista");
   const [mode, setMode] = useState<GameMode>("dupla");
   const [nameA, setNameA] = useState("");
@@ -35,7 +36,9 @@ export function SetupForm({ onStart }: SetupFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-md flex-col gap-8 px-5 py-10 text-emerald-50"
+      className={`mx-auto flex w-full max-w-md flex-col gap-8 px-5 pt-10 text-emerald-50 transition-[padding] ${
+        extraBottomSpace ? "pb-56" : "pb-10"
+      }`}
     >
       <header className="text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-emerald-300">Marcador de</p>
